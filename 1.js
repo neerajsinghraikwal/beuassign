@@ -9,7 +9,8 @@
 function rotatearr(n,k,arr){
     k = k%n
     let stack = []
-    while(k <= n){
+    let count = 0
+    while(count < k){
         stack.push(arr[0])
         let newarr = []
         for(let i = 1; i < n; i++){
@@ -18,13 +19,13 @@ function rotatearr(n,k,arr){
         newarr.push(stack[0])
         arr = newarr
         stack.pop()
-        k++
+        count++
     }
     return arr
 }
 
-let arr1 = [3,2,6,5,8]
-console.log(rotatearr(5,3,arr1))
+let arr1 = [1,2,3,4,5,6,7,8,9,10]
+console.log(rotatearr(10,3,arr1))
 
 // Time Complexity = O(n*k)
 // Space Complexity = O(1)  
